@@ -4,7 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fcc3636d-d7c5-4b10-9071-faff8bcdd285" name="Changes" comment="" />
+    <list default="true" id="fcc3636d-d7c5-4b10-9071-faff8bcdd285" name="Changes" comment="jkk added">
+      <change afterPath="$PROJECT_DIR$/jar/fastjson-1.2.79.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jar/jacoco/jacocoagent.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jar/jacoco/jacococli.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/App.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/ListTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/ListTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/ParserConfigTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/ParserConfigTest.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -34,16 +43,25 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "C:/Users/Elisa Venditti/Desktop/ISW2/De Angelis/EsempiInClasse",
+    "jdk.selected.JAVA_MODULE": "15",
+    "last_opened_file_path": "C:/Users/Elisa Venditti/Desktop/bookkeeper",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0"
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.lookFeel"
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Elisa Venditti\Desktop\ISW2\myFastjson\jar\jacoco" />
+      <recent name="C:\Users\Elisa Venditti\Desktop\ISW2\myFastjson\jar" />
+      <recent name="C:\Users\Elisa Venditti\Desktop\ISW2\myFastjson\lib" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.ParserConfigTest">
     <configuration name="ListTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="myFastjson" />
-      <extension name="coverage">
+      <extension name="coverage" runner="jacoco">
         <pattern>
           <option name="PATTERN" value="org.example.*" />
           <option name="ENABLED" value="true" />
@@ -51,13 +69,53 @@
       </extension>
       <option name="PACKAGE_NAME" value="org.example" />
       <option name="MAIN_CLASS_NAME" value="org.example.ListTest" />
+      <option name="METHOD_NAME" value="" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ParserConfigTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="myFastjson" />
+      <extension name="coverage" runner="jacoco">
+        <pattern>
+          <option name="PATTERN" value="org.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example" />
+      <option name="MAIN_CLASS_NAME" value="org.example.ParserConfigTest" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ParserConfigTest.myTest_1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="myFastjson" />
+      <extension name="coverage" runner="jacoco">
+        <pattern>
+          <option name="PATTERN" value="org.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example" />
+      <option name="MAIN_CLASS_NAME" value="org.example.ParserConfigTest" />
+      <option name="METHOD_NAME" value="myTest_1" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="JUnit.ListTest" />
+      <item itemvalue="JUnit.ParserConfigTest" />
+      <item itemvalue="JUnit.ParserConfigTest.myTest_1" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ParserConfigTest" />
+        <item itemvalue="JUnit.ParserConfigTest.myTest_1" />
         <item itemvalue="JUnit.ListTest" />
       </list>
     </recent_temporary>
@@ -83,5 +141,17 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="jkk added" />
+    <option name="LAST_COMMIT_MESSAGE" value="jkk added" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/myFastjson$ParserConfigTest_myTest_1.ic" NAME="ParserConfigTest.myTest_1 Coverage Results" MODIFIED="1652621025752" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>org.example.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/myFastjson$ParserConfigTest.exec" NAME="ParserConfigTest Coverage Results" MODIFIED="1652631216024" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="jacoco" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>org.example.*</FILTER>
+    </SUITE>
   </component>
 </project>

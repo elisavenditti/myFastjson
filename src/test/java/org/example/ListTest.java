@@ -19,26 +19,31 @@ public class ListTest extends TestCase {
 
     @Parameters
     public static Collection<Object[]> data(){
-        return Arrays.asList(new Object[][]{{new LinkedList(), 23L,45L,"[23L,45L]"}});
-        // Metodo statico crea l'input fornito all'oggetto testato e descrive l'output atteso
+        // Crea l'input fornito all'oggetto testato e descrive l'output atteso
         // Ritorna un insieme (testedInstance, firstParam, secondParam, expectedResult)
+        return Arrays.asList(new Object[][]{{new LinkedList(), 23L,45L,"[23L,45L]"}});
+
     }
     private final List list;                // tested object
     private final long first;               // first parameter
     private final long second;              // second parameter
     private final String expectedResult;    // expected result
 
+    private void configure(){
+        // lega i parametri passati con il runner (configura l'istanza under testing)
+        this.list.add(first);
+        this.list.add(second);
+    }
     public ListTest(List list, long first, long second, String expectedResult){
         this.list = list;
         this.first = first;
         this.second = second;
         this.expectedResult = expectedResult;
+        configure();
     }
 
     @Test
-    public void test_null() throws Exception {
-        list.add(first);
-        list.add(second);
+    public void testConversionListToJsonString() throws Exception {
         Assert.assertEquals(this.expectedResult, JSON.toJSONString(list, SerializerFeature.WriteClassName));
     }
 
