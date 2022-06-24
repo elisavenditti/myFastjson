@@ -9,42 +9,65 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
 
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 @RunWith(Parameterized.class)
 public class ListTest extends TestCase {
 
     @Parameters
     public static Collection<Object[]> data(){
-        // Crea l'input fornito all'oggetto testato e descrive l'output atteso
-        // Ritorna un insieme (testedInstance, firstParam, secondParam, expectedResult)
-        return Arrays.asList(new Object[][]{{new LinkedList(), 23L,45L,"[23L,45L]"}});
+
+        List l1 = new LinkedList();
+        l1.add(23L);
+        l1.add(45L);
+
+        List l2 = new LinkedList();
+        l2.addAll(l1);
+        l2.add(5L);
+
+        String resL1 = "[23L,45L]";
+        return Arrays.asList(new Object[][]{
+                {l1, SerializerFeature.WriteClassName, resL1},
+                {new LinkedList<>(), SerializerFeature.WriteClassName, "[]"},
+                {null, SerializerFeature.WriteClassName, "null"},
+                {l1, null, "exception"},
+                {l1, SerializerFeature.PrettyFormat, "[23,45]"}
+        });
 
     }
-    private final List list;                // tested object
-    private final long first;               // first parameter
-    private final long second;              // second parameter
-    private final String expectedResult;    // expected result
+    private List list;
+    private SerializerFeature feature;
+    private String expectedResult;
 
-    private void configure(){
-        // lega i parametri passati con il runner (configura l'istanza under testing)
-        this.list.add(first);
-        this.list.add(second);
+
+    private void configure(List list) {
+        if(list == null){
+            this.list = list;
+            return;
+        }
+        this.list = new LinkedList();
+        for (Object elem : list)
+            this.list.add(elem);
+
     }
-    public ListTest(List list, long first, long second, String expectedResult){
-        this.list = list;
-        this.first = first;
-        this.second = second;
+
+    public ListTest(List list, SerializerFeature feature, String expectedResult){
+
+        configure(list);
+        this.feature = feature;
         this.expectedResult = expectedResult;
-        configure();
     }
 
     @Test
-    public void testConversionListToJsonString() throws Exception {
-        Assert.assertEquals(this.expectedResult, JSON.toJSONString(list, SerializerFeature.WriteClassName));
+    public void testConversionListToJsonString() {
+
+        String actual;
+        try {
+            actual = JSON.toJSONString(this.list, this.feature);
+        } catch (NullPointerException e){
+            actual = "exception";
+        }
+        Assert.assertEquals(this.expectedResult, actual);
     }
 
 }
